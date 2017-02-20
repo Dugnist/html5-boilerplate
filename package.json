@@ -1,10 +1,10 @@
 {
   "name": "html5_boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot --port 3000",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "keywords": [],
