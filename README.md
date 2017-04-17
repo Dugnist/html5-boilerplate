@@ -6,6 +6,13 @@ Get started
   npm start
 ```
 
+Put your files into src folder.
+
+Don't forget add to index.html!
+```
+  <script type="text/javascript" src="../build/bundle.js"></script>
+```
+
 For build
 
 ```

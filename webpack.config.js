@@ -1,69 +1,53 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/js/app.js',
     output: {
-        path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
-        filename: 'build.js'
+        path: path.resolve(__dirname, './build'),
+        publicPath: '/build/',
+        filename: 'bundle.js'
     },
-    module: {
-        rules: [{
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
-            },
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]?[hash]'
-                }
-            }
-        ],
-        loaders: [{
-          test: /\.css$/,
-          loaders: ['style', 'css', 'sass']
-        }]
-    },
+    module: {},
     resolve: {},
     devServer: {
-        historyApiFallback: true,
-        noInfo: true
-    },
-    performance: {
-        hints: false
+      contentBase: path.join(__dirname, "src"),
+      compress: true,
+      port: 3001,
+      hot: false,
+      watchContentBase: true,
+      noInfo: true
     },
     devtool: '#eval-source-map'
 }
 
-if (process.env.NODE_ENV !== 'production') {
-    module.exports.plugins = (module.exports.plugins || []).concat([
-        new HtmlWebpackPlugin({
-            template: './index.html'
-        })
-    ])
-}
-
-if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map'
-    module.exports.plugins = (module.exports.plugins || []).concat([
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
-            }
-        }),
-        new webpack.LoaderOptionsPlugin({
-            minimize: true,
-            debug: false
-        }),
-    ])
-}
+// if (process.env.NODE_ENV === 'development') {
+//     module.exports.devtool = '#source-map'
+//     module.exports.plugins = (module.exports.plugins || []).concat([
+//         // new webpack.DefinePlugin({
+//         //     'process.env': {
+//         //         NODE_ENV: '"production"'
+//         //     }
+//         // }),
+//         // new webpack.optimize.UglifyJsPlugin({
+//         //     sourceMap: true,
+//         //     compress: {
+//         //         warnings: false
+//         //     }
+//         // }),
+//         // new webpack.LoaderOptionsPlugin({
+//         //     minimize: true,
+//         //     debug: false
+//         // }),
+//         new HtmlWebpackPlugin({
+//             template: './src/index.html',
+//             filename: './index.html',
+//             minify: {
+//               "collapseWhitespace": true,
+//               "removeComments": true
+//             }
+//         })
+//     ])
+// }
