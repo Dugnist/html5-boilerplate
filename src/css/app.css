@@ -1,102 +1,142 @@
+/*
+ ***********************
+ * RESET AND NORMALIZE *
+ ***********************
+*/
+
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, code, del, dfn, em, img, q, s, samp, small, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, main, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 body {
-
-  margin: 0 auto;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   text-align: center;
-
+	line-height: 1.15;
 }
 
-h1,
-h2,
-h3 {
-
-  font-weight: normal;
-  line-height: 1.5;
-  margin: 0;
-
+h1 {
+  font-size: 2em;
+  margin: 0.5em 0;
 }
 
-main {
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
 
-  margin: 0 auto;
+img {
+  border-style: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* Box Model */
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* A better looking default horizontal rule */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
   padding: 0;
-
 }
+
+/*
+ *******************
+ * PAGE MAIN STYLE *
+ *******************
+*/
 
 section {
-
-  display: block;
-  margin: 0;
-  padding: 0;
   background: #fff;
+  margin: 0;
+}
 
+.clear {
+  clear: both;
 }
 
 /* HEADER */
 
 header {
-
   display: inline-block;
   width: 100%;
   background: #ccc;
-
 }
 
 header nav {
-
   float: right;
-
-}
-
-header nav ul {
-
-  display: inline-block;
-  list-style: none;
-  margin: 0;
-
 }
 
 header nav li {
-
   float: left;
   margin-left: 10px;
-
 }
 
-/* EXAMPLE */
+/* EXAMPLE SECTION */
 
 section.example {
-
-  display: inline-block;
   width: 100%;
-  outline: 1px solid #ccc;
-
 }
 
 .example .cards {
-
   display: inline-block;
-
+  margin-bottom: -4px;
 }
 
 .example article {
-
-  display: inline-block;
   float: left;
-
 }
 
 /* FOOTER */
 
 footer {
-
   display: block;
   width: 100%;
-
 }
+
+/*
+ *******************
+ *  MEDIA QUERIES  *
+ *******************
+*/
 
 /* MEDIA FOR NOTEBOOK DISPLAY */
 
-@media only screen and (max-width: 1200px) and (min-width: 320px) {
+@media only screen and (max-width: 1200px) and (min-width: 300px) {
 
   body { background: #ffc168; }
 
@@ -104,7 +144,7 @@ footer {
 
 /* MEDIA FOR TABLET DISPLAY */
 
-@media only screen and (max-width: 992px) and (min-width: 320px) {
+@media only screen and (max-width: 992px) and (min-width: 300px) {
 
   body { background: #fd5c63; }
 
@@ -112,7 +152,7 @@ footer {
 
 /* MEDIA FOR MEDIUM MOBILE DISPLAY */
 
-@media only screen and (max-width: 768px) and (min-width: 320px) {
+@media only screen and (max-width: 768px) and (min-width: 300px) {
 
   body { background: #fbb034; }
 
@@ -120,7 +160,7 @@ footer {
 
 /* MEDIA FOR LITTLE MOBILE DISPLAY */
 
-@media only screen and (max-width: 480px) and (min-width: 320px) {
+@media only screen and (max-width: 480px) and (min-width: 300px) {
 
   body { background: #ffdd00; }
 
