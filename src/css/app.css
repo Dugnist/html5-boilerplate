@@ -1,5 +1,13 @@
 /*
  ***********************
+ *    IMPORT FONTS     *
+ ***********************
+*/
+
+@import url('../fonts/Roboto.css?family=Roboto');
+
+/*
+ ***********************
  * RESET AND NORMALIZE *
  ***********************
 */
@@ -87,6 +95,10 @@ section {
 
 .clear {
   clear: both;
+}
+
+main h1 {
+	font-family: 'Roboto', sans-serif;
 }
 
 /* HEADER */
