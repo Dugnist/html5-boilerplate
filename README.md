@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100" src="http://www.logicstudio.net/spa/wp-content/uploads/2013/05/LogicStudio_HTML5.png" alt="html5-boilerplate" />
+  <img width="120" src="http://www.logicstudio.net/spa/wp-content/uploads/2013/05/LogicStudio_HTML5.png" alt="html5-boilerplate" />
 </p>
 
 # html5-boilerplate
