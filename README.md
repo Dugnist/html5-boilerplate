@@ -1,3 +1,5 @@
+![html5-boilerplate](http://www.logicstudio.net/spa/wp-content/uploads/2013/05/LogicStudio_HTML5.png "html5-boilerplate")
+
 # html5-boilerplate
 
 Get started
