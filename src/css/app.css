@@ -26,7 +26,8 @@ main, nav, output, ruby, section, summary, time, mark, audio, video {
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-	display: block;
+  display: block;
+  margin: 0;
 }
 
 ol, ul {
@@ -47,7 +48,7 @@ body {
 
 h1 {
   font-size: 2em;
-  margin: 0.5em 0;
+  margin: 0.67em 0;
 }
 
 a {
@@ -55,8 +56,34 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 
+b,
+strong {
+  font-weight: bolder;
+}
+
+small {
+  font-size: 80%;
+}
+
+figure {
+  margin: 1em 40px;
+}
+
 img {
   border-style: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
 }
 
 textarea {
@@ -65,6 +92,10 @@ textarea {
 
 [hidden] {
   display: none;
+}
+
+[clear] {
+  clear: both;
 }
 
 /* Box Model */
@@ -94,15 +125,10 @@ hr {
 
 section {
   background: #fff;
-  margin: 0;
-}
-
-.clear {
-  clear: both;
 }
 
 main h1 {
-	font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* HEADER */
@@ -180,4 +206,39 @@ footer {
 
   body { background: #ffdd00; }
 
+}
+
+/*
+ *******************
+ *  PRINT STYLES  *
+ *  DONT TOUCH!!  *
+ *******************
+*/
+
+@media print {
+  *, *:before, *:after, *:first-letter, *:first-line {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a, a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ""; }
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid; }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3; }
+  h2, h3 {
+    page-break-after: avoid; }
 }
