@@ -2,16 +2,66 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const HtmlReplaceWebpackPlugin = require('html-replace-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
-module.exports = {
+const CONFIG = {
     entry: './src/js/app.js',
     output: {
         path: path.resolve(__dirname, './build'),
-        publicPath: '/build/',
-        filename: 'bundle.js'
+        publicPath: 'build',
+        filename: 'app.js'
     },
-    module: {},
-    resolve: {},
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin(),
+      new HtmlWebpackPlugin({
+        template: './src/index.html',
+        filename: './index.html',
+        minify: {
+          "collapseWhitespace": true,
+          "minifyCSS": true,
+          "removeComments": true
+        }
+      }),
+      new HtmlReplaceWebpackPlugin([
+        {
+          pattern: '<script type="text/javascript" src="../build/app.js"></script>',
+          replacement: ''
+        },
+        {
+          pattern: '<link rel="stylesheet" href="./css/app.css">',
+          replacement: ''
+        }
+      ]),
+      new ExtractTextPlugin('css/app.css'),
+      new OptimizeCssAssetsPlugin({
+        cssProcessorOptions: { discardComments: { removeAll: true } }
+      }),
+      new CopyWebpackPlugin([{
+        from: 'src/images/',
+        to: 'images/'
+      }]),
+      new ImageminPlugin({
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        optipng: { optimizationLevel: 3 },
+        jpegtran: { progressive: true },
+        gifsicle: { optimizationLevel: 1 },
+        svgo: {},
+      })
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          use: ExtractTextPlugin.extract({
+            fallback: "style-loader",
+            use: "css-loader"
+          })
+        }
+      ],
+    },
     devServer: {
       contentBase: path.join(__dirname, "src"),
       compress: true,
@@ -20,34 +70,14 @@ module.exports = {
       watchContentBase: true,
       noInfo: true
     },
-    devtool: '#eval-source-map'
+    devtool: '#source-map'
 }
 
-// if (process.env.NODE_ENV === 'development') {
-//     module.exports.devtool = '#source-map'
-//     module.exports.plugins = (module.exports.plugins || []).concat([
-//         // new webpack.DefinePlugin({
-//         //     'process.env': {
-//         //         NODE_ENV: '"production"'
-//         //     }
-//         // }),
-//         // new webpack.optimize.UglifyJsPlugin({
-//         //     sourceMap: true,
-//         //     compress: {
-//         //         warnings: false
-//         //     }
-//         // }),
-//         // new webpack.LoaderOptionsPlugin({
-//         //     minimize: true,
-//         //     debug: false
-//         // }),
-//         new HtmlWebpackPlugin({
-//             template: './src/index.html',
-//             filename: './index.html',
-//             minify: {
-//               "collapseWhitespace": true,
-//               "removeComments": true
-//             }
-//         })
-//     ])
-// }
+if(process.env.NODE_ENV === 'production') {
+
+  CONFIG.output.publicPath = './';
+  CONFIG.output.filename = 'js/app.js';
+
+}
+
+module.exports = CONFIG;

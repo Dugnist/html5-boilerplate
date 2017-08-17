@@ -118,6 +118,16 @@ hr {
 }
 
 /*
+ *****************
+ * CSS VARIABLES *
+ *****************
+*/
+
+:root {
+  --main-bg-color: #fff; /* For using: var(--main-bg-color); */
+}
+
+/*
  *******************
  * PAGE MAIN STYLE *
  *******************
@@ -176,11 +186,15 @@ footer {
  *******************
 */
 
+/* EXTRA LARGE DISPLAY */
+
+@media only screen and (max-width: 2400px) and (min-width: 1500px) {
+
+}
+
 /* MEDIA FOR NOTEBOOK DISPLAY */
 
 @media only screen and (max-width: 1200px) and (min-width: 300px) {
-
-  body { background: #ffc168; }
 
 }
 
@@ -188,23 +202,17 @@ footer {
 
 @media only screen and (max-width: 992px) and (min-width: 300px) {
 
-  body { background: #fd5c63; }
-
 }
 
 /* MEDIA FOR MEDIUM MOBILE DISPLAY */
 
 @media only screen and (max-width: 768px) and (min-width: 300px) {
 
-  body { background: #fbb034; }
-
 }
 
 /* MEDIA FOR LITTLE MOBILE DISPLAY */
 
 @media only screen and (max-width: 480px) and (min-width: 300px) {
-
-  body { background: #ffdd00; }
 
 }
 
