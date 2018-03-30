@@ -16,7 +16,7 @@ html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, ad
 big, code, del, dfn, em, img, q, s, samp, small, strong, sub, sup, tt, var, b, u, i, dl,
 dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr,
 th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu,
-main, nav, output, ruby, section, summary, time, mark, audio, video {
+main, nav, output, section, summary, time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -91,11 +91,16 @@ textarea {
 }
 
 [hidden] {
-  display: none;
+  display: none !important;
 }
 
 [clear] {
   clear: both;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
 /* Box Model */
@@ -146,7 +151,7 @@ main h1 {
 header {
   display: inline-block;
   width: 100%;
-  background: #ccc;
+  background: #000;
 }
 
 header nav {

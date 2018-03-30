@@ -6,16 +6,15 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlReplaceWebpackPlugin = require('html-replace-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 const CONFIG = {
     entry: './src/js/app.js',
     output: {
-        path: path.resolve(__dirname, './build'),
-        publicPath: 'build',
-        filename: 'app.js'
+      path: path.resolve(__dirname, './build'),
+      filename: 'app.js'
     },
     plugins: [
-      new webpack.optimize.UglifyJsPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
         filename: './index.html',
@@ -42,6 +41,10 @@ const CONFIG = {
       new CopyWebpackPlugin([{
         from: 'src/images/',
         to: 'images/'
+      }, {
+        from: 'src/*.txt',
+        to: './[name].[ext]',
+        toType: 'template'
       }]),
       new ImageminPlugin({
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -86,6 +89,13 @@ if(process.env.NODE_ENV === 'production') {
 
   CONFIG.output.publicPath = './';
   CONFIG.output.filename = 'js/app.js';
+  CONFIG.plugins.push(new MinifyPlugin());
+  CONFIG.module.rules.push({
+    test: [/\.js$/],
+    exclude: [/node_modules/],
+    loader: 'babel-loader',
+    options: { presets: ['env'] }
+  });
 
 }
 

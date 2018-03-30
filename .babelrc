@@ -1,12 +1,3 @@
 {
-    "presets": [
-        ["es2015", {
-            "modules": false
-        }]
-    ],
-    "plugins": [
-        ["transform-react-jsx", {
-            "pragma": "m"
-        }]
-    ]
+  "presets": ["@babel/preset-env"]
 }

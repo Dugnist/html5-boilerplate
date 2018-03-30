@@ -1,6 +1,6 @@
 {
   "name": "html5_boilerplate",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "",
   "main": "./src/index.js",
   "scripts": {
@@ -11,6 +11,12 @@
   "author": "Dugnist Alexey",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "babel-loader": "^8.0.0-beta.2",
+    "babel-minify-webpack-plugin": "^0.2.0",
+    "babel-preset-env": "^2.0.0-alpha.20",
+    "browserify": "^14.4.0",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
@@ -21,7 +27,7 @@
     "imagemin-webpack-plugin": "^1.5.0-beta.0",
     "optimize-css-assets-webpack-plugin": "^3.0.0",
     "style-loader": "^0.13.1",
-    "webpack": "^2.2.1",
+    "webpack": "^2.7.0",
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {}
