@@ -1,8 +1,4 @@
-<p align="center">
-  <img width="200" src="http://css-live.ru/wp-content/uploads/2017/06/web1.png" alt="html5-boilerplate" />
-</p>
-
-# html5-boilerplate (2.0)
+# <p align="center"><a href='https://github.com/Dugnist/html5-boilerplate'><img width="200" src="http://css-live.ru/wp-content/uploads/2017/06/web1.png" alt="html5-boilerplate" /></a><br/> html5-boilerplate </p>
 
 ### Get started
 
