@@ -2,11 +2,7 @@
   <img width="200" src="http://css-live.ru/wp-content/uploads/2017/06/web1.png" alt="html5-boilerplate" />
 </p>
 
-<p align="center">
-  <h1>
-    html5-boilerplate (2.0)
-  <h1>
-</p>
+# html5-boilerplate (2.0)
 
 ### Get started
 
