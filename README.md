@@ -1,8 +1,12 @@
 <p align="center">
-  <img width="150" src="http://css-live.ru/wp-content/uploads/2017/06/web1.png" alt="html5-boilerplate" />
+  <img width="200" src="http://css-live.ru/wp-content/uploads/2017/06/web1.png" alt="html5-boilerplate" />
 </p>
 
-# html5-boilerplate (2.0)
+<p align="center">
+  <h1>
+    html5-boilerplate (2.0)
+  <h1>
+</p>
 
 ### Get started
 
