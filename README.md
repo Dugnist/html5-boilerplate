@@ -1,10 +1,10 @@
 <p align="center">
-  <img width="120" src="http://css-live.ru/wp-content/uploads/2017/06/web1.png" alt="html5-boilerplate" />
+  <img width="150" src="http://css-live.ru/wp-content/uploads/2017/06/web1.png" alt="html5-boilerplate" />
 </p>
 
 # html5-boilerplate (2.0)
 
-## Get started
+### Get started
 
 ```
   git clone https://github.com/Dugnist/html5-boilerplate.git my_project
@@ -13,20 +13,20 @@
   npm start
 ```
 
-## Put your files into /src folder.
+### Put your files into /src folder.
 
 Don't forget add to index.html this line:
 ```
   <script type="text/javascript" src="../build/app.js"></script>
 ```
 
-## For build
+### For build
 
 ```
   npm run build
 ```
 
-## Features
+### Features
 
 - Lightweight, fast opened.
 - Webpack livereload separated config
