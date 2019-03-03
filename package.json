@@ -16,19 +16,20 @@
     "babel-loader": "^8.0.0-beta.2",
     "babel-minify-webpack-plugin": "^0.2.0",
     "babel-preset-env": "^2.0.0-beta.2",
-    "browserify": "^14.4.0",
+    "browserify": "^16.2.3",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^2.1.2",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^0.10.0",
     "html-replace-webpack-plugin": "^2.2.6",
-    "html-webpack-plugin": "^2.30.1",
-    "imagemin-webpack-plugin": "^1.5.0-beta.0",
+    "html-webpack-plugin": "^3.2.0",
+    "imagemin-webpack-plugin": "^2.4.0",
     "optimize-css-assets-webpack-plugin": "^3.0.0",
     "style-loader": "^0.13.1",
-    "webpack": "^2.7.0",
-    "webpack-dev-server": "^2.3.0"
+    "webpack": "^4.29.1",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {}
 }
