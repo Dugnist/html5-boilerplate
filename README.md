@@ -30,3 +30,7 @@ Don't forget add to index.html this line:
 - Include 5 pure css media queries points and best normalize css practices.
 - Include all you needed html meta tags.
 - ES6 and browserify syntax support. (require, arrow func, let const etc...).
+
+### 2020 updates
+
+- SASS support (thanks @patrikniebur)
